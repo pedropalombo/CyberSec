@@ -1,4 +1,5 @@
 __Web Sec Classroom lectured by Feross Aboukhadijeh, from Standford University__
+/*https://www.classcentral.com/classroom/youtube-cs-253-web-security-48191*/
 
 =| APIs Overlook |=
 0-> every site can store up to 5mb on disk space
