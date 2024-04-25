@@ -1,3 +1,3 @@
-# CS 253 Assignment 0 – Web Programming Adventure ✈️
+# Assignment 0 – University of Standford <CS 253> 🏫
 
 Assignment instructions: https://web.stanford.edu/class/cs253/assign0
