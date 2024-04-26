@@ -1,1 +1,3 @@
-// TODO: Replace this with your solution.
+let example = 'example string';
+
+console.log(example.length);

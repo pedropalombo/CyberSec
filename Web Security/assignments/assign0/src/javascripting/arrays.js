@@ -1,1 +1,3 @@
-// TODO: Replace this with your solution.
+let pizzaToppings = ['tomato sauce', 'cheese', 'pepperoni'];
+
+console.log(pizzaToppings);

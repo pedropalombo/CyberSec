@@ -1,1 +1,3 @@
-// TODO: Replace this with your solution.
+let n = 128;
+
+console.log(n.toString());

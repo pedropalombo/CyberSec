@@ -1,1 +1,5 @@
-// TODO: Replace this with your solution.
+function math(firstNumber, secondNumber, thirdNumber){
+    return (secondNumber*thirdNumber)+firstNumber
+}
+
+console.log(math(53, 61, 67))
