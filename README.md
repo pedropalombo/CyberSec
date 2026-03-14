@@ -1,24 +1,30 @@
-# Web Security with Node.js
+# Cyber Security
 
-Welcome to the Web Security with Node.js repository. This project collects notes, exercises, and example code focused on practical web security techniques using Node.js and JavaScript.
+This repository is a practical collection of code snippets, exercises, and reference notes aimed at helping me to explore security concepts.
 
-## Overview
+## What you’ll find here
 
-The content is arranged as hands‑on materials and course-style exercises aimed at helping you understand common web vulnerabilities and how to mitigate them in Node.js applications. You'll find focused exercises, small example servers, and resources for learning secure development patterns.
+The materials are organized as small, runnable examples and short reference modules. The goal is to keep things concise and approachable so it's easier to explore key security topics without getting overwhelmed.
 
-## What's inside
+### Web Security Topics
 
-- Course materials and assignments (e.g., Oxford CS253-style content).
-- Small Node.js programs and exercises (learnyounode, javascripting, and related folders).
-- Example servers and client exercises demonstrating common vulnerabilities and defenses.
-- Supporting resources such as scripts and styles used for demonstrations.
+- **Secure development practices** (input validation, error handling, defensive patterns)
+- **Authentication & authorization** (session handling, access control, token strategies)
+- **Data protection** (encryption, hashing, secret management)
+- **Common web threats** (XSS, injection, CSRF, and mitigation techniques)
 
-## Topics covered
+### Networking Topics
 
-- Secure coding practices and defensive patterns
-- Authentication and authorization strategies
-- Encryption and hashing basics
-- Input validation and sanitization to prevent injections
-- Session management best practices
-- Cross-site scripting (XSS) mitigation
-- Secure communication between client and server
+- **Networking basics** (topology ideas and common hardware components)
+
+## How to use this repository
+
+### Navigate the materials
+
+- In exercise folders, `src/` typically contains the prompt and `self/` contains a worked solution.
+- Reference documents and diagrams are provided as markdown and image files alongside code.
+
+## Project structure (high level)
+
+- **`InfoSec/WebSec - Oxford [CS253]/`** — **course-style exercises and class notes** focused on web security.
+- **`InfoSec/NetSec/`** — **networking concepts and reference diagrams** (see the relevant folder for topology and protocol notes).
