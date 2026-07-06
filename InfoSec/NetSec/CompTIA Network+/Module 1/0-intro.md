@@ -47,13 +47,19 @@
                         ^!-> PS: loads of redundancy, so it's not used often ==> !!! Man-In-The-Middle !!!
                     
                 \\-> [Switches](./src/Hardware/hardwareHubs.png)
-                    -#> send info based on the data/frame/package's [MAC address](./src/macTables.png)
+                    -#> send info based on the data/frame/package's [MAC address](./src/Network/macTables.png)
                         ^!-> PS: if the addresses are new/non-existant on the table, the switch floods the server until its receiver is found (based on the protocol being used)
                         ^!-> PSS: the address is deleted after 30m of non-usage, since they're stored in RAMs
 
                         +-> MAC tables (VLAN 1 - AA:AA:AA:BB:BB:BB - Port 1 | VLAN 1 - CC:CC:CC:DD:DD:DD - Port 24)
                             ++-> VLAN X: the connector between sender-receiver (traffic channel) ==> !!! VLAN HOPPING !!!
-                            ++-> AA/CC: the origin of the package
+
+                            ++-> AA/CC: the origin of the package [hardware brand]
+                                ##-> OUI (Organizationally Unique Identifier)
+
+                            ++-> BB/DD: the network interface being used [hardware brand's model]
+                                ##-> NIC (Network Interface Controller Specific)
+
                             ++-> Port X: the tracer to facilitate future communications
 
     -> Components

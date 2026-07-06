@@ -8,7 +8,7 @@
             ^-> network functionalities/protocols described/set-up in [7 layers](./src/Network/OSI%20Model/osiLayers.png)
                 ^^!-> PS: let's use the [telemarketing company of an internet provider](./src/Network/OSI%20Model/osiTechnicianExample.png)
 
-                >>>> Computer Networks Group <<<<
+                >>>> Computer Networks <<<<
                 §=> protocol-heavy, and highly automated
 
                 #-> [Physical](./src/Network/OSI%20Model/layerPhysical.png)
@@ -19,7 +19,7 @@
                 #-> [Data/Enlace](./src/Network/OSI%20Model/layersData.png)
                     +-> ensures error recoveries, influx control, and data/frame sequencing
                         ++-> "Check the configuration of the switch to see if it's as standard"
-                            )-> eg: Ethernet, Token Ring, Switches (MAC tables) (hardware's software-focus)
+                            )-> eg: [Ethernet](2-ethernetStructure.md/#ethernet-structure), Token Ring, Switches (MAC tables) (hardware's software-focus)
 
                 #-> [Network](./src/Network/OSI%20Model/layersNetwork.png)
                     +-> combines messages/segments into packages, as well as define the protocols for routing (IP, IPx, etcS)
@@ -35,7 +35,7 @@
                             )-> eg: web usage, file transfering, emails, SSHs
 
 
-                >>>> Computer Devices Group <<<<
+                >>>> Computer Devices <<<<
                 §=> user-oriented, computer-based
 
                 #-> Session
@@ -50,3 +50,4 @@
                 #-> [Application](./src/Network/OSI%20Model/layersApplication.png)
                     +-> anything that's displayed for the user to interact with (protocols: HTTP, FTP, SMTP)
                         )-> eg: web browsers, emails, etc
+

@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"b408282aa21d36cb","type":"file","file":"Basics/src/linusStructure.png","x":-494,"y":-20,"width":588,"height":440},
+		{"id":"c89dd164c0b200cd","type":"file","file":"Basics/src/linuxDirs.png","x":-980,"y":0,"width":321,"height":400},
+		{"id":"409e60b5b46908be","type":"file","file":"Basics/Components.md","x":-400,"y":-520,"width":400,"height":400},
+		{"id":"021c0a045ac149ad","type":"file","file":"Basics/src/Commands/linuxCommands.png","x":-997,"y":-520,"width":356,"height":400}
+	],
+	"edges":[
+		{"id":"2d9a1dd0dd25f538","fromNode":"409e60b5b46908be","fromSide":"bottom","toNode":"b408282aa21d36cb","toSide":"top"},
+		{"id":"7e6443b9ec4afcfa","fromNode":"b408282aa21d36cb","fromSide":"left","toNode":"c89dd164c0b200cd","toSide":"right"},
+		{"id":"db1b91a2b09e680f","fromNode":"409e60b5b46908be","fromSide":"left","toNode":"021c0a045ac149ad","toSide":"right"}
+	]
+}
