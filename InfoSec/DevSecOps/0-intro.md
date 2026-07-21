@@ -20,7 +20,7 @@
             ^-> Configuration Manager (Ansible, Chef)
 
 > DevSecOps: adding a security layer to [SDLC's workflow](./src/sdlcWorkflow.png), and making it the priority
-    -> can be achieved by adding [security steps](1-securitySteps.md) to existing pipelines, or creating new ones altogether via:
+    -> can be achieved by adding [security steps](./1-testingAndTooling.md) to existing pipelines, or creating new ones altogether via:
         \-> SAST (Static Application Security Testing)
             +-> applications made to test the security of the code, as well as point the exact location of the vulnerability
             \-> eg: SonarQube, Horusec
