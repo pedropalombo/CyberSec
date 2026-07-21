@@ -1,4 +1,44 @@
-## Security Steps ##
+## Principles ##
+> [Defence in depth](https://wiki.owasp.org/index.php/Defense_in_depth)
+    -> never rely on a single line of defence, but rather multiple layers of security
+        ^-!> PS: it's not about the ammount, but how each complement the other
+        ^-> eg: [Login page's defence](./src/loginDefence.png)
+            +-> strong password reqs
+            +-> CAPTCHA needed after multiple failed attempts
+            +-> MFA
+            +-> email confirmation (if from an unknown IP/country)
+
+> [Least privilege](https://owasp.org/www-community/Access_Control)
+    -> users shouldn have minimal power to just access what they're supposed to
+        ^-> eg: a temporary account shouldn't have admin privileges | a server/service account(machine) shouldn't have domain admin, interactive login access, or shell usage. Rather, it should be restricted to specific file(s)/folder(s), or with read-only permissions, etc.
+
+> Authentication X Authorisation
+    -> authen.: credentials
+    -> autho.: permissions
+
+> [CIA Triad](https://www.fortinet.com/br/resources/cyberglossary/cia-triad)
+    -!> the foundation of any info sec program
+
+    -> Confidentiality
+        ^-> ensuring data is kept safe and unavailable from unothorised access
+            +-> eg: the need of authorisation to reach X file, and file encryption on top
+
+    -> Integrity
+        ^-> making sure that the data is accurate/hasn't been modified/tampered with
+            +-> eg: digital signatures/SSL certificates on websites for platform authenticity ('google.com' is actually Google because it has Google's signature/certificate embedded to it)
+                \\-> PS: things to look for:
+                    //-> Validity/Expiration dates
+                    //-> Subject Alternative Name (SAN) / Common Name matching the URL's
+                    //-> Issued by a recognized Certificate Authority (CA)
+
+    -> Availability
+        ^-> ensuring data/systems are available
+            +-> eg: if a denial of service attack (DoS) would be applied against the system, methods should be employed to protect against such
+                \\-> such as having redundant/backup networks/apps/databases ready-to-go, so user/clients can still access the systems, and monitor the influx to make sure they don't get compromised as well
+
+
+
+## Security Steps & Tools ##
 > SAST (Static Application Security Testing)
     -> [tools](https://owasp.org/www-community/Source_Code_Analysis_Tools) used for finding, and direct towards, vulnerabilities inside the (Static) code
         ^-> earlier stages of development
@@ -65,24 +105,37 @@
 
 > CNAPP (Cloud Native Application Protection Platform)
     -> integrated (multiple-tools-into-one) security solution accross the entire lifecycle of a cloud-native app
-        +-> usually agentless
-        +-> CSPM (Cloud Security Posture Management)
-            ^-> defines/validates infra config to find security issues
+        ^-> usually agentless
+        ^-> CSPM (Cloud Security Posture Management)
+            +-> defines/validates infra config to find security issues
                 \\-> eg: Wiz, Microsoft Defender, Palo Alto
-                
 
-        +-> CWPP (Cloud Workload Protection Platform)
-            ^-> detects anomalies/malwares/vulnerabilities based on the VMs/Containers/Functions workloads
+        ^-> CWPP (Cloud Workload Protection Platform)
+            +-> detects anomalies/malwares/vulnerabilities based on the VMs/Containers/Functions workloads
                 \\-> eg: Microsoft Defender, Orca Security, Wiz
         
-        +-> CIEM (Cloud Infrastructure Entitlement Management)
-            ^-> manages credentials & permissions for the resources (human's or machine's)
+        ^-> CIEM (Cloud Infrastructure Entitlement Management)
+            +-> manages credentials & permissions for the resources (human's or machine's)
                 \\-> eg: removes excessive/toxic permissions from users (Least privilege)
                 \\-> tools: Microsoft Entra Permissions Management, SailPoint Identity Security, Wiz/Orca Security
         
-        +-> IaC
-            ^-> infra's code check before it going live [CI/CD]
+        ^-> IaC
+            +-> infra's code check before it going live [CI/CD]
                 \\-> eg: Terraform, ARM, CloudFormation
     
     -> scans the cloud, integrating the source code, to find the source of the problem
     -> can also englobe tools such as SCA, runtime monitoring, and more
+
+
+## Testing and Vulnerabilities ##
+> Penetration Testing
+    -!> PS: it's usually manual, but automation is possible (but harder)
+        ^-> OBS: should happen regularly, but since it's manual and costly it's usually scheduled on an annual basis
+    -> authorised security test against an app/environment to evaluate its safety
+        ^-> commonly it's the exploit of vulnerabilities to see how far said exploit can go
+            \-> can be a white/black/grey-box (mix) test
+
+> Vulnerability Assessment/Scaning
+    -!> PS: since it's not reliant on manual intervention, they can be automated [CI/CD pipeline] 
+    -> similar to pen test since it tries to identify vulnerabilities within an application/env
+        ^-> diff: it's not about exploiting, but rather report what was found
