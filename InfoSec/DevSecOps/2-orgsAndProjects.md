@@ -11,7 +11,8 @@
 
     -> [Top Ten](https://owasp.org/www-project-top-ten/)
         \-> documentation of the top most critical web security concerns
-            ^-!> based on the [2025 document](https://owasp.org/Top10/2025/)
+            ^-!> PS: based on the [2025 document](https://owasp.org/Top10/2025/)
+            
             ^-> A01 - Broken Access Control
                 +-> users being able to act outside their intended permissions
                     \\-> eg: users able to act as admins

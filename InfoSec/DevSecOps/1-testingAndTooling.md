@@ -1,7 +1,7 @@
 ## Principles ##
 > [Defence in depth](https://wiki.owasp.org/index.php/Defense_in_depth)
     -> never rely on a single line of defence, but rather multiple layers of security
-        ^-!> PS: it's not about the ammount, but how each complement the other
+        ^-!> PS: it's not about the ammount, but how each step complement the other
         ^-> eg: [Login page's defence](./src/loginDefence.png)
             +-> strong password reqs
             +-> CAPTCHA needed after multiple failed attempts
@@ -10,7 +10,8 @@
 
 > [Least privilege](https://owasp.org/www-community/Access_Control)
     -> users shouldn have minimal power to just access what they're supposed to
-        ^-> eg: a temporary account shouldn't have admin privileges | a server/service account(machine) shouldn't have domain admin, interactive login access, or shell usage. Rather, it should be restricted to specific file(s)/folder(s), or with read-only permissions, etc.
+        ^-> eg: a [temporary account](./src/linuxPermissionOwners.png) shouldn't have [admin privileges](./src/linuxPermissionSymbols.png) | a server/service account(machine) shouldn't have domain admin, interactive login access, or shell usage. Rather, it should have access restrictly to [specific file(s)/folder(s)](./src/linuxPermissionChangeOwner.png), or with [read-only permissions](./src/linuxPermissionValue.png), etc.
+            \\-!> OBS: the [3rd module](./3-linuxFundamentals.md) goes further into this
 
 > Authentication X Authorisation
     -> authen.: credentials
@@ -104,8 +105,9 @@
             +-> eg: Snyk
 
 > CNAPP (Cloud Native Application Protection Platform)
-    -> integrated (multiple-tools-into-one) security solution accross the entire lifecycle of a cloud-native app
-        ^-> usually agentless
+    -> integrated security solution (multiple-tools-into-one) accross the entire lifecycle of a cloud-native app
+        ^-!> PS: usually agentless
+
         ^-> CSPM (Cloud Security Posture Management)
             +-> defines/validates infra config to find security issues
                 \\-> eg: Wiz, Microsoft Defender, Palo Alto
@@ -135,7 +137,44 @@
         ^-> commonly it's the exploit of vulnerabilities to see how far said exploit can go
             \-> can be a white/black/grey-box (mix) test
 
-> Vulnerability Assessment/Scaning
-    -!> PS: since it's not reliant on manual intervention, they can be automated [CI/CD pipeline] 
+> Vulnerability Assessment/Scanning
+    -!> PS: since it's not reliant on manual intervention, so they can be automated [CI/CD pipeline] 
     -> similar to pen test since it tries to identify vulnerabilities within an application/env
-        ^-> diff: it's not about exploiting, but rather report what was found
+        ^-> diff: it's not about exploiting, but rather reporting what was found
+
+> Privilege Escalation
+    -> go from an unprivileged account to a privileged one (eg: root), when you're not "allowed" to
+        ^-> plentiful of ways to do such, and some are:
+            +-> Kernel exploits
+                ++-> they're usually based on CVEs
+
+            +-> Explointing services/programs running elevated
+                ++-> insecure configuration of such can lead to them being stepping stones for the escalation
+
+            +-> Weak/plaintext password usage
+                ++-> users saving passwords as plaintext on their machines
+
+            +-> Misconfiguration
+            +-> World writable scripts
+                ++-> global scripts that can be accessed by anyone
+
+            +-> Cron misconfiguration
+                ++-> scheduled tasks that can be manipulated for such
+
+    -> ways to combat this is through testing for Linux privilege escalation enumeration via scripts
+        ^-> egs:
+            +-> Active
+                ++-> [LinPEAS](https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS) / LinPEAS-ng
+                    \\-> comprehensive and in-depth
+                    \\-> good for audits
+
+                ++-> [lse.sh](https://github.com/diego-treitos/linux-smart-enumeration/tree/master)
+                    \\-> minimalist and fast (not as detailed)
+                    \\-> good for "sanity checks"
+            
+            +-> Legacy
+                ++-> [LinEnum](https://github.com/rebootuser/LinEnum)
+                ++-> [unix-privesc-check](https://pentestmonkey.net/tools/audit/unix-privesc-check)
+
+            +-> Defunct
+                ++-> [linprivchecker](https://github.com/sleventyeleven/linuxprivchecker)
