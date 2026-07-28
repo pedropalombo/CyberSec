@@ -1,8 +1,8 @@
 ## Linux Security Fundamentals ##
 > File Permission & Ownership
-    -> so we can respect the principle of [least-privilege](./src/linuxPermissionSymbols.png), we need to make sure the [right users](./src/linuxPermissionOwners.png) have [access/control](./src/linuxPermissionValue.png) over certain files/dirs is essential
+    -> so we can respect the principle of [least-privilege](./src/linux/linuxPermissionSymbols.png), we need to make sure the [right users](./src/linux/linuxPermissionOwners.png) have [access/control](./src/linux/linuxPermissionValue.png) over certain files/dirs is essential
         \-!> PS: reference for [CHMOD](https://linux.die.net/man/1/chmod) and [CHOWN](https://linux.die.net/man/1/chown)
-        \-!> OBS>: testing can be done with the [hands-on files](./src/handsOn/)
+        \-!> OBS>: testing can be done with the [hands-on files](./src/linux/handsOn/)
         
         ^-> eg: 
             +-> CHMOD (change mode): chmod <valuesForPrivileges> <file>
@@ -16,16 +16,16 @@
 > Password Storage
     -> there's a file that usually contains user account info such as userId, password, home directory, shell in-use, and so on
         \-> [Older distributions](https://man7.org/linux/man-pages/man1/passwd.1.html)
-            ^-> found in [/etc/passwd](./src/linuxPassword.png), but changed to ':x:'
+            ^-> found in [/etc/passwd](./src/linux/linuxPassword.png), but changed to ':x:'
         
         \-> [Newer/Current ''](https://linux.die.net/man/5/shadow)
-            ^-> passwords are now stored in [/etc/shadow](./src/linuxPasswordShadow.png), or 'shadow files', but the user info is still in /etc/passwd
+            ^-> passwords are now stored in [/etc/shadow](./src/linux/linuxPasswordShadow.png), or 'shadow files', but the user info is still in /etc/passwd
                 +-> dissection of the format used by the shadow file
                     ++-> linuxuser: $6$wXtY9ZoG$MzaxvKfj3Z8F9G8wKz7LU0...: 18009 : 0: 120 : 7 : 14 ::
                         ]-> Base ==> user : encryptedPasswordValue($id$salt$hash) : dateSinceModified : minPswrdAge : maxPswrdAge : pswrdWarningPeriod : pswrdInactivityPeriod
                         
                         ]-> $6$ ==> encryption algorythm
-                            *-!> PS: PAM (/etc/pam.d/common-password) can be used to determine the [chosen algorythm](./src/linuxPasswordPAM.png)
+                            *-!> PS: PAM (/etc/pam.d/common-password) can be used to determine the [chosen algorythm](./src/linux/linuxPasswordPAM.png)
                                 \\-> $1$ == MD5
                                 \\-> $2a$ == Blowfish
                                 \\-> $2y$ == Blowfish
@@ -46,7 +46,7 @@
         ^-> root: shares passwords, lacks logging (accountability), yet it gives full access to the user
             +-!> OBS: you can change to the root user with "sudo su root"
 
-    -> define who can evoke sudo on [/etc/sudoers](./src/linuxSudo.png)
+    -> define who can evoke sudo on [/etc/sudoers](./src/linux/linuxSudo.png)
         ^-!> PS: edit it using 'visudo', since said text editor uses syntax validation before saving
         
         ^-> eg: sudo usermod -aG sudo <username>
@@ -96,8 +96,8 @@
 
 > [SSH (Secure SHell)](https://linux.die.net/man/1/ssh)
     -> enables remote login to the CLI of a server
-        ^-!> PS: usually a [client-server model](./src/linuxSSH.png)
-            +-> [eg](./src/linuxSSH-example.png): client ==> Putty (Windows) || server OpenSSH (Linux)
+        ^-!> PS: usually a [client-server model](./src/linux/linuxSSH.png)
+            +-> [eg](./src/linux/linuxSSH-example.png): client ==> Putty (Windows) || server OpenSSH (Linux)
                 \\-> server creates a daemon (service) that accepts remote connections, and the client connects to it
 
     -> runs on TCP port 22 by default

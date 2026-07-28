@@ -10,7 +10,7 @@
 
 > [Least privilege](https://owasp.org/www-community/Access_Control)
     -> users shouldn have minimal power to just access what they're supposed to
-        ^-> eg: a [temporary account](./src/linuxPermissionOwners.png) shouldn't have [admin privileges](./src/linuxPermissionSymbols.png) | a server/service account(machine) shouldn't have domain admin, interactive login access, or shell usage. Rather, it should have access restrictly to [specific file(s)/folder(s)](./src/linuxPermissionChangeOwner.png), or with [read-only permissions](./src/linuxPermissionValue.png), etc.
+        ^-> eg: a [temporary account](./src/linux/linuxPermissionOwners.png) shouldn't have [admin privileges](./src/linux/linuxPermissionSymbols.png) | a server/service account(machine) shouldn't have domain admin, interactive login access, or shell usage. Rather, it should have access restrictly to [specific file(s)/folder(s)](./src/linux/linuxPermissionChangeOwner.png), or with [read-only permissions](./src/linux/linuxPermissionValue.png), etc.
             \\-!> OBS: the [3rd module](./3-linuxFundamentals.md) goes further into this
 
 > Authentication X Authorisation
