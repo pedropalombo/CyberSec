@@ -23,7 +23,7 @@
                         ++-> AWS (ECR - Deprecated)[https://aws.amazon.com/ecr/]
 
     -> it's quick to deploy since it requires no outside dependencies, as well as easy to rollback as everything is versioned via tags
-        \-!> OBS: Kubernetes orchestrate the containers to be moved and used elsewhere if needed!
+        \-!> OBS: [Kubernetes](./7-kubernetes.md) orchestrate the containers to be moved and used elsewhere if needed!
 
     -> what it isn't
         \-> a substitute for a VM
