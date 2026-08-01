@@ -46,10 +46,10 @@ The materials are organized as small, runnable examples and short reference modu
 
 - In exercise folders, `src/` typically contains the prompt and `self/` contains a worked solution.
 - Reference documents and diagrams are provided as markdown and image files alongside code.
-- Look in the folder for the topic you want to explore (for example, `InfoSec/NetSec/` for networking labs or `DevSecOps/` for both theoretical foundations and hands-on examples for CI/CD and IaC).
+- Look in the folder for the topic you want to explore (for example, [InfoSec/NetSec/](InfoSec/NetSec/) for networking labs or [DevSecOps/](DevSecOps/) for both theoretical foundations and hands-on examples for CI/CD and IaC).
 
 ## Project structure (high level)
 
-- **`InfoSec/WebSec - Oxford [CS253]/`** — **course-style exercises and class notes** focused on web security.
-- **`InfoSec/NetSec/`** — **networking concepts and reference diagrams** (topology, packet capture labs, IDS/IPS notes, VPN and segmentation examples).
-- **`DevSecOps/`** — **theoretical foundations and practical examples** for securing development pipelines and infrastructure (security principles, CI/CD examples, IaC security checks, container hardening, secrets management).
+- **[InfoSec/WebSec - Oxford [CS253]/](InfoSec/WebSec%20-%20Oxford%20%5BCS253%5D/)** — **course-style exercises and class notes** focused on web security.
+- **[InfoSec/NetSec/](InfoSec/NetSec/)** — **networking concepts and reference diagrams** (topology, packet capture labs, IDS/IPS notes, VPN and segmentation examples).
+- **[DevSecOps/](DevSecOps/)** — **theoretical foundations and practical examples** for securing development pipelines and infrastructure (security principles, CI/CD examples, IaC security checks, container hardening and related exercises).
