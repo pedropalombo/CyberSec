@@ -52,4 +52,4 @@ The materials are organized as small, runnable examples and short reference modu
 
 - **[InfoSec/WebSec - Oxford [CS253]/](InfoSec/WebSec%20-%20Oxford%20%5BCS253%5D/)** — **course-style exercises and class notes** focused on web security.
 - **[InfoSec/NetSec/](InfoSec/NetSec/)** — **networking concepts and reference diagrams** (topology, packet capture labs, IDS/IPS notes, VPN and segmentation examples).
-- **[DevSecOps/](Infosec/DevSecOps/)** — **theoretical foundations and practical examples** for securing development pipelines and infrastructure (security principles, CI/CD examples, IaC security checks, container hardening and related exercises).
+- **[DevSecOps/](InfoSec/DevSecOps/)** — **theoretical foundations and practical examples** for securing development pipelines and infrastructure (security principles, CI/CD examples, IaC security checks, container hardening and related exercises).
